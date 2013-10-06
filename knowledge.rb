@@ -1,5 +1,5 @@
 class Module
-    def attribute att
+    def attribute att, &block
         att_val = nil
         if att.is_a? Hash
             att_val = att.first[1]
@@ -12,11 +12,14 @@ class Module
 
         define_method(att) do
             attr = instance_variable_get("@#{att}")
-            attr ||= att_val if !instance_variables.include? "@#{att}".to_sym 
+            if !instance_variables.include? "@#{att}".to_sym 
+                attr ||= instance_eval &block if block_given?
+                attr ||= att_val
+            end
             attr
         end
 
-        define_method(att.to_s + "?") do
+        define_method(att.to_s+"?") do
             if send(att) 
                 true
             else
