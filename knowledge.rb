@@ -1,4 +1,4 @@
-class Class
+class Module
     def attribute att
         attr_accessor att
         define_method(att.to_s + "?") do
