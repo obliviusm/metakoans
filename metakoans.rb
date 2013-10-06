@@ -22,6 +22,8 @@
 # as a student of meta-programming your course will be guided by a guru whose
 # wisdom and pithy sayings will assist you on your journey.
 #   
+
+
 # a successful student will eventually be able to do this   
 #   
 #   harp:~ > ruby metakoans.rb knowledge.rb
