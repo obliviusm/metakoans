@@ -137,7 +137,6 @@ module MetaKoans
     }
 
     o = c::new
-
     assert{ o.a == 42 }
     assert{ o.a? }
     assert{ (o.a = nil) == nil }
